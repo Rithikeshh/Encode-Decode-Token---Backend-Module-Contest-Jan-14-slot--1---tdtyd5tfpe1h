@@ -29,8 +29,8 @@ status: 'Success'
 const encodePayload = async (req, res) => {
   try {
     //Write your code here
-    const {name, email, role} = req.body
-    const token = jwt.sign({name: name, email:email, role:role}, JWT_SECRET)
+    const {name, email, role, password} = req.body
+    const token = jwt.sign({name: name, email:email, role:role, password: password}, JWT_SECRET)
     return res.status(200).json({
       "token": token,
       "status": "Success"
