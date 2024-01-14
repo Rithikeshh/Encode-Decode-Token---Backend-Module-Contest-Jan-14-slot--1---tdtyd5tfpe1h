@@ -32,7 +32,9 @@ const encodePayload = async (req, res) => {
     const {name, email, role} = req.body
     const token = jwt.sign({name: name, email:email, role:role}, JWT_SECRET)
     return res.status(200).json({
-      "token": token
+      "token": token,
+      "status": "Success"
+      
     })
   } catch (err) {
     console.error(err);
