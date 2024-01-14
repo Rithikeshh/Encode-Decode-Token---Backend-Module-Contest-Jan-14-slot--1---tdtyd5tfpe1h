@@ -79,7 +79,7 @@ const decodeToken = (req, res) => {
     //Write your code here
     const {token} = req.body;
     const decodedToken = jwt.verify(token, JWT_SECRET)
-    return res.status(201).json({
+    return res.status(200).json({
       "payload": decodedToken,
       "status": "Success"
       
